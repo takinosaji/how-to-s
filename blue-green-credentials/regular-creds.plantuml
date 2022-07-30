@@ -1,0 +1,6 @@
+@startuml
+start
+:Generate new credentials;
+:Set new credentials;
+stop
+@enduml

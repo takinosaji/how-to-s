@@ -1,0 +1,18 @@
+@startuml
+start
+:Read secret content from\nAWS Secret Manager instance;
+if (**.isBlueGreen**) is (true) then
+    if (**.blueCredentials**) is (exist) then
+        #lightblue:Resolve BLUE credentials;
+    else (missing)
+        if (**.greenCredentials**) is (exist) then
+            #palegreen:Resolve GREEN credentials;
+        else (missing)
+            #orange:Finish workflow with the error;
+        endif
+    endif
+else (false)
+    :Resolve regular credentials;
+endif
+stop
+@enduml

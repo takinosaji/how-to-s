@@ -1,0 +1,9 @@
+@startuml
+start
+:Generate new credentials;
+if (GREEN credentials exist) is (yes) then
+    :Set current GREEN credentials\nas new BLUE credentials;
+endif
+:Set new GREEN\ncredentials;
+stop
+@enduml
